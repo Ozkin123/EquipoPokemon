@@ -14,8 +14,8 @@ public class PokemonServiceImp implements IPokemonService {
 
 
     @Override
-    public PokemonEntity getPokemon(String url) {
-        return null;
+    public Object getPokemon(String url) {
+        return restTemplate.getForObject(url,Object.class);
     }
 
     @Override
