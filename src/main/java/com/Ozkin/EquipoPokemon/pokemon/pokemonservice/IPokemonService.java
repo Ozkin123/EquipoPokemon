@@ -1,9 +1,9 @@
 package com.Ozkin.EquipoPokemon.pokemon.pokemonservice;
 
-import com.Ozkin.EquipoPokemon.pokemon.pokemonentity.PokemonEntity;
+import com.Ozkin.EquipoPokemon.pokemon.pokemondto.PokemonDTO;
 
 public interface IPokemonService {
-    public PokemonEntity getPokemon(String url);
+    public PokemonDTO getPokemon(String url);
 
     public String mensejeInjection();
 

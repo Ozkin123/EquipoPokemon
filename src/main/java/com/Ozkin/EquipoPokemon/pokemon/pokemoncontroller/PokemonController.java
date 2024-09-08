@@ -1,6 +1,6 @@
 package com.Ozkin.EquipoPokemon.pokemon.pokemoncontroller;
 
-import com.Ozkin.EquipoPokemon.pokemon.pokemonentity.PokemonEntity;
+import com.Ozkin.EquipoPokemon.pokemon.pokemondto.PokemonDTO;
 import com.Ozkin.EquipoPokemon.pokemon.pokemonservice.IPokemonService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -17,7 +17,7 @@ public class PokemonController {
 
      private String uriCharizard = "https://pokeapi.co/api/v2/pokemon/charizard";
     @GetMapping("/charizard")
-    public PokemonEntity getPokemon(){
+    public PokemonDTO getPokemon(){
         return pokemonService.getPokemon(uriCharizard);
     }
 }

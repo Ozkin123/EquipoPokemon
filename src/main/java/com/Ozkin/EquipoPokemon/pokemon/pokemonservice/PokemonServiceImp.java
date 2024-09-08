@@ -1,6 +1,6 @@
 package com.Ozkin.EquipoPokemon.pokemon.pokemonservice;
 
-import com.Ozkin.EquipoPokemon.pokemon.pokemonentity.PokemonEntity;
+import com.Ozkin.EquipoPokemon.pokemon.pokemondto.PokemonDTO;
 import com.Ozkin.EquipoPokemon.serviceaux.ConsumoApi;
 import org.springframework.stereotype.Service;
 
@@ -16,8 +16,8 @@ public class PokemonServiceImp implements IPokemonService {
 
 
     @Override
-    public PokemonEntity getPokemon(String url) {
-        return consumoApi.consumirApi(url,PokemonEntity.class);
+    public PokemonDTO getPokemon(String url) {
+        return consumoApi.consumirApi(url,PokemonDTO.class);
     }
 
     @Override
