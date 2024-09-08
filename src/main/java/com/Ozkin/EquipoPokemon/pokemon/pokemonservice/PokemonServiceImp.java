@@ -1,21 +1,23 @@
 package com.Ozkin.EquipoPokemon.pokemon.pokemonservice;
 
 import com.Ozkin.EquipoPokemon.pokemon.pokemonentity.PokemonEntity;
-import com.fasterxml.jackson.databind.ObjectMapper;
+import com.Ozkin.EquipoPokemon.serviceaux.ConsumoApi;
 import org.springframework.stereotype.Service;
-import org.springframework.web.client.RestTemplate;
 
 
 @Service
 public class PokemonServiceImp implements IPokemonService {
 
-    private RestTemplate restTemplate = new RestTemplate();
-    private ObjectMapper mapper = new ObjectMapper();
+    private final ConsumoApi consumoApi;
+
+    public PokemonServiceImp(ConsumoApi consumoApi) {
+        this.consumoApi = consumoApi;
+    }
 
 
     @Override
     public PokemonEntity getPokemon(String url) {
-        return restTemplate.getForObject(url,PokemonEntity.class);
+        return consumoApi.consumirApi(url,PokemonEntity.class);
     }
 
     @Override
